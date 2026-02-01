@@ -40,8 +40,8 @@ async def start_pm(client, message: Message, _):
 
         if name.startswith("help"):
             keyboard = help_pannel(_)
-            return await message.reply_photo(
-                photo=config.START_IMG_URL,
+            return await message.reply_video(
+                video=config.START_IMG_URL,
                 caption=_["help_1"].format(config.SUPPORT_GROUP),
                 protect_content=True,
                 reply_markup=keyboard,
@@ -101,8 +101,8 @@ async def start_pm(client, message: Message, _):
     out = private_panel(_)
     UP, CPU, RAM, DISK = await bot_sys_stats()
 
-    await message.reply_photo(
-        photo=config.START_IMG_URL,
+    await message.reply_video(
+        video=config.START_IMG_URL,
         caption=_["start_2"].format(
             message.from_user.mention,
             app.mention,
@@ -131,8 +131,8 @@ async def start_gp(client, message: Message, _):
     out = start_panel(_)
     uptime = int(time.time() - _boot_)
 
-    await message.reply_photo(
-        photo=config.START_IMG_URL,
+    await message.reply_video(
+        video=config.START_IMG_URL,
         caption=_["start_1"].format(app.mention, get_readable_time(uptime)),
         reply_markup=InlineKeyboardMarkup(out),
     )
@@ -143,51 +143,15 @@ async def start_gp(client, message: Message, _):
 async def api_console_cb(client, query: CallbackQuery):
     await query.message.edit_caption(
         caption="""
-🚀 **NEXGENBOTS API Console**
-
-Fast, reliable & developer-friendly API access.
-
-━━━━━━━━━━━━━━
-💰 **Pricing (Monthly)**
-
-🔓 **Free**
-• 5,000 API requests / day
-
-🚀 **Starter — ₹1**
-• 10,000 API requests / day
-
-⚡ **Standard — ₹2**
-• 15,000 API requests / day
-
-🔥 **Pro — ₹3**
-• 25,000 API requests / day
-
-🏢 **Business — ₹4**
-• 50,000 API requests / day
-
-🏆 **Enterprise — ₹5**
-• 100,000 API requests / day
-
-👑 **Ultra — ₹6**
-• 150,000 API requests / day
-
-━━━━━━━━━━━━━━
-⚡ **Features**
-• High-speed responses  
-• Stable uptime  
-• Fair rate-limits  
-• Dev-friendly  
-
-🛒 **Buy / Manage API**
-Use the console below 👇
+ɴɪᴄʜᴇ ᴊᴏ ʙᴜᴛᴛᴏɴ ʜᴀɪ ɴᴀ ᴇᴋ ʙᴀʀ ᴛᴀᴘ ᴋᴀʀᴏ ᴜꜱᴋᴇ ʙᴀᴀᴅ ᴀʟᴀɢ ɢᴀɴᴅᴍᴀꜱᴛɪ ʜᴏɢɪ
         """,
         parse_mode=ParseMode.MARKDOWN,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🛒 Open API Console",
-                        url="https://console.nexgenbots.xyz",
+                        "Bot",
+                        url="https://t.me/Senpai_Waifu_Grabbing_Bot?start=_tgr_p0_SPDxmMDM9",
                     )
                 ],
                 [
@@ -250,8 +214,8 @@ async def welcome(client, message: Message):
                     return await app.leave_chat(message.chat.id)
 
                 out = start_panel(_)
-                await message.reply_photo(
-                    photo=config.START_IMG_URL,
+                await message.reply_video(
+                    video=config.START_IMG_URL,
                     caption=_["start_3"].format(
                         message.from_user.first_name,
                         app.mention,
